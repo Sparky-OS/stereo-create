@@ -1,0 +1,41 @@
+{
+    "KPlugin": {
+        "Description": "Makes stereo pictures and videos in other stereo formats: MPO, JPS, PNS, anaglyphs and 3D video",
+        "Description[fr]": "Crée des photos et des vidéos stéréo dans d’autres formats stéréo : MPO, JPS, PNS, anaglyphes et vidéo 3D",
+        "Description[ja]": "ステレオ写真とビデオを他のステレオ形式 (MPO、JPS、PNS、アナグリフ、3D ビデオ) で作成します",
+        "Description[ko]": "스테레오 사진과 동영상을 다른 스테레오 형식(MPO, JPS, PNS, 애너글리프, 3D 동영상)으로 만듭니다",
+        "Description[pl]": "Tworzy zdjęcia i filmy stereo w innych formatach stereo: MPO, JPS, PNS, anaglify i wideo 3D",
+        "Description[pt_BR]": "Cria fotos e vídeos estéreo em outros formatos estéreo: MPO, JPS, PNS, anáglifos e vídeo 3D",
+        "Description[zh_CN]": "将立体照片和视频制作成其他立体格式：MPO、JPS、PNS、补色立体图和 3D 视频",
+        "Description[zh_TW]": "將立體照片和影片製作成其他立體格式：MPO、JPS、PNS、補色立體圖和 3D 影片",
+        "EnabledByDefault": true,
+        "Icon": "view-stereo",
+        "MimeTypes": [
+            "image/jpeg",
+            "image/png",
+            "image/x-jps",
+            "image/x-mpo",
+            "image/svg+xml",
+            "image/svg+xml-compressed",
+            "image/webp",
+            "image/tiff",
+            "video/mp4",
+            "video/x-matroska",
+            "video/webm",
+            "video/quicktime",
+            "video/x-msvideo",
+            "video/mpeg",
+            "video/mp2t",
+            "video/x-m4v",
+            "video/x-ms-wmv"
+        ],
+        "Name": "Create Stereo",
+        "Name[fr]": "Créer en stéréo",
+        "Name[ja]": "ステレオを作成",
+        "Name[ko]": "스테레오 만들기",
+        "Name[pl]": "Utwórz stereo",
+        "Name[pt_BR]": "Criar estéreo",
+        "Name[zh_CN]": "创建立体",
+        "Name[zh_TW]": "建立立體"
+    }
+}

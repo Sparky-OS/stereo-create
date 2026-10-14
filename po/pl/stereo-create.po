@@ -1,0 +1,250 @@
+# The translation of stereo-create.
+# SPDX-FileCopyrightText: 2026 Daniel Campos Ramos <Capitain_Jack@yahoo.com>
+# SPDX-License-Identifier: GPL-2.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: stereo-create\n"
+"Report-Msgid-Bugs-To: https://github.com/Sparky-OS/stereo-create/issues\n"
+"PO-Revision-Date: 2026-10-14 00:00+0000\n"
+"Last-Translator: Daniel Campos Ramos <Capitain_Jack@yahoo.com>\n"
+"Language-Team: Sparky Stereo OS\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/cli/main.cpp:31
+msgctxt "@title"
+msgid "Create Stereo"
+msgstr "Utwórz stereo"
+
+#: src/cli/main.cpp:32
+msgctxt "@info"
+msgid "Makes stereo pictures and videos in other stereo formats."
+msgstr "Tworzy zdjęcia i filmy stereo w innych formatach stereo."
+
+#: src/cli/main.cpp:33
+msgctxt "@info"
+msgid "Sparky Stereo OS, Daniel Ramos's edition of SparkyLinux (by Paweł \"pavroo\" Pijanowski)"
+msgstr "Sparky Stereo OS, edycja SparkyLinux przygotowana przez Daniela Ramosa (SparkyLinux: Paweł \"pavroo\" Pijanowski)"
+
+#: src/cli/main.cpp:44
+msgctxt "@info:shell %1 is a list of names"
+msgid "What to make: one of %1."
+msgstr "Co utworzyć: jedno z %1."
+
+#: src/cli/main.cpp:46
+msgctxt "@info:shell"
+msgid "JPEG quality, 1 to 100 (default 92)."
+msgstr "Jakość JPEG, od 1 do 100 (domyślnie 92)."
+
+#: src/cli/main.cpp:47
+msgctxt "@info:shell"
+msgid "The time of a frame grab in seconds (default: a third of the video)."
+msgstr "Moment pobrania klatki w sekundach (domyślnie: jedna trzecia filmu)."
+
+#: src/cli/main.cpp:49
+msgctxt "@info:shell"
+msgid "Write anaglyphs as PNG instead of JPEG."
+msgstr "Zapisuj anaglify jako PNG zamiast JPEG."
+
+#: src/cli/main.cpp:50
+msgctxt "@info:shell"
+msgid "Only tell whether each file is stereo, and how."
+msgstr "Tylko podaj, czy każdy plik jest stereo i w jakim układzie."
+
+#: src/cli/main.cpp:51
+msgctxt "@info:shell"
+msgid "Do not show the progress in the notification area."
+msgstr "Nie pokazuj postępu w obszarze powiadomień."
+
+#: src/cli/main.cpp:53
+msgctxt "@info:shell"
+msgid "Stereo pictures or videos."
+msgstr "Zdjęcia lub filmy stereo."
+
+#: src/cli/main.cpp:82
+msgctxt "@info:shell %1 is a list of names"
+msgid "Choose what to make with --to: %1."
+msgstr "Wybierz, co utworzyć, opcją --to: %1."
+
+#: src/engine/convertvideo.cpp:41 src/engine/convertvideo.cpp:285
+msgctxt "@info %1 is a program"
+msgid "Cannot start %1."
+msgstr "Nie można uruchomić %1."
+
+#: src/engine/convertvideo.cpp:66 src/engine/convertvideo.cpp:338
+msgctxt "@info %1 is an error message"
+msgid "FFmpeg failed: %1"
+msgstr "FFmpeg zakończył się błędem: %1"
+
+#: src/engine/convertvideo.cpp:79
+msgctxt "@info %1 is a program, %2 its message"
+msgid "%1 failed: %2"
+msgstr "%1 zakończył się błędem: %2"
+
+#: src/engine/convertvideo.cpp:257
+msgctxt "@info"
+msgid "The video has no frame rate to keep."
+msgstr "Film nie ma liczby klatek na sekundę, którą można zachować."
+
+#: src/engine/convertvideo.cpp:427 src/engine/convertvideo.cpp:519
+msgctxt "@info"
+msgid "This stereo packing cannot be converted yet."
+msgstr "Tego układu stereo nie można jeszcze przekonwertować."
+
+#: src/engine/convertvideo.cpp:434
+msgctxt "@info"
+msgid "An anaglyph needs a video in standard dynamic range; this one is HDR."
+msgstr "Anaglif wymaga filmu o standardowym zakresie dynamiki; ten jest HDR."
+
+#: src/engine/convertvideo.cpp:536
+msgctxt "@info"
+msgid "No frame could be read at that time."
+msgstr "Nie udało się odczytać klatki w tym momencie."
+
+#: src/engine/createjob.cpp:188
+msgctxt "@title job, %1 is a kind of file such as MPO"
+msgid "Creating %1"
+msgstr "Tworzenie: %1"
+
+#: src/engine/createjob.cpp:189
+msgctxt "@label the file a stereo file is made from"
+msgid "Source"
+msgstr "Źródło"
+
+#: src/engine/createjob.cpp:197
+msgctxt "@info %1 is a file name, %2 an error message"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: src/engine/createjob.cpp:217
+msgctxt "@info"
+msgid "Not a stereo picture or video."
+msgstr "To nie jest zdjęcie ani film stereo."
+
+#: src/engine/createjob.cpp:227
+msgctxt "@info"
+msgid "This is made from a picture, not a video."
+msgstr "To powstaje ze zdjęcia, nie z filmu."
+
+#: src/engine/createjob.cpp:233
+msgctxt "@info"
+msgid "The views of the picture cannot be read."
+msgstr "Nie można odczytać widoków zdjęcia."
+
+#: src/engine/createjob.cpp:239
+msgctxt "@info"
+msgid "This is made from a video, not a picture."
+msgstr "To powstaje z filmu, nie ze zdjęcia."
+
+#: src/engine/photo.cpp:45
+msgctxt "@info %1 is a file format, %2 an error message"
+msgid "Cannot write %1: %2"
+msgstr "Nie można zapisać %1: %2"
+
+#: src/engine/photo.cpp:57
+msgctxt "@info %1 is a file name, %2 an error message"
+msgid "Cannot save %1: %2"
+msgstr "Nie można zapisać pliku %1: %2"
+
+#: src/engine/photo.cpp:103
+msgctxt "@info"
+msgid "The JPS writer gave no JPEG data."
+msgstr "Zapis JPS nie zwrócił danych JPEG."
+
+#: src/engine/targets.cpp:57
+msgctxt "@action:inmenu Create stereo"
+msgid "JPS (cross view)"
+msgstr "JPS (widok skrzyżowany)"
+
+#: src/engine/targets.cpp:59
+msgctxt "@action:inmenu Create stereo"
+msgid "MPO"
+msgstr "MPO"
+
+#: src/engine/targets.cpp:61
+msgctxt "@action:inmenu Create stereo"
+msgid "Red/Cyan Anaglyph"
+msgstr "Anaglif czerwono-cyjanowy"
+
+#: src/engine/targets.cpp:63
+msgctxt "@action:inmenu Create stereo"
+msgid "Red/Cyan Anaglyph for CRT Screens"
+msgstr "Anaglif czerwono-cyjanowy dla ekranów CRT"
+
+#: src/engine/targets.cpp:65
+msgctxt "@action:inmenu Create stereo"
+msgid "Green/Magenta Anaglyph"
+msgstr "Anaglif zielono-purpurowy"
+
+#: src/engine/targets.cpp:67
+msgctxt "@action:inmenu Create stereo"
+msgid "Amber/Blue Anaglyph"
+msgstr "Anaglif bursztynowo-niebieski"
+
+#: src/engine/targets.cpp:69
+msgctxt "@action:inmenu Create stereo"
+msgid "Side by Side PNG"
+msgstr "PNG obok siebie"
+
+#: src/engine/targets.cpp:71
+msgctxt "@action:inmenu Create stereo"
+msgid "PNS (cross view)"
+msgstr "PNS (widok skrzyżowany)"
+
+#: src/engine/targets.cpp:73
+msgctxt "@action:inmenu Create stereo"
+msgid "Proof Pair (MPO and Red/Cyan Anaglyph)"
+msgstr "Para próbna (MPO i anaglif czerwono-cyjanowy)"
+
+#: src/engine/targets.cpp:75
+msgctxt "@action:inmenu Create stereo"
+msgid "Full Side by Side Video (MKV)"
+msgstr "Film w pełnym układzie obok siebie (MKV)"
+
+#: src/engine/targets.cpp:77
+msgctxt "@action:inmenu Create stereo"
+msgid "Half Side by Side Video for 3D TVs (MKV)"
+msgstr "Film w połówkowym układzie obok siebie dla telewizorów 3D (MKV)"
+
+#: src/engine/targets.cpp:79
+msgctxt "@action:inmenu Create stereo"
+msgid "Top and Bottom Video for 3D TVs (MKV)"
+msgstr "Film w układzie góra-dół dla telewizorów 3D (MKV)"
+
+#: src/engine/targets.cpp:81
+msgctxt "@action:inmenu Create stereo"
+msgid "Side by Side Video (MP4)"
+msgstr "Film w układzie obok siebie (MP4)"
+
+#: src/engine/targets.cpp:83
+msgctxt "@action:inmenu Create stereo"
+msgid "Red/Cyan Anaglyph Video"
+msgstr "Film anaglifowy czerwono-cyjanowy"
+
+#: src/engine/targets.cpp:85
+msgctxt "@action:inmenu Create stereo"
+msgid "Frame as MPO"
+msgstr "Klatka jako MPO"
+
+#: src/engine/targets.cpp:87
+msgctxt "@action:inmenu Create stereo"
+msgid "Frame as JPS"
+msgstr "Klatka jako JPS"
+
+#: src/engine/targets.cpp:89
+msgctxt "@action:inmenu Create stereo"
+msgid "Frame as Red/Cyan Anaglyph"
+msgstr "Klatka jako anaglif czerwono-cyjanowy"
+
+#: src/plugin/stereocreateitemaction.cpp:67
+msgctxt "@info"
+msgid "The stereo-create program cannot be started."
+msgstr "Nie można uruchomić programu stereo-create."
+
+#: src/plugin/stereocreateitemaction.cpp:91
+msgctxt "@action:inmenu"
+msgid "Create Stereo"
+msgstr "Utwórz stereo"

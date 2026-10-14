@@ -1,0 +1,250 @@
+# The translation of stereo-create.
+# SPDX-FileCopyrightText: 2026 Daniel Campos Ramos <Capitain_Jack@yahoo.com>
+# SPDX-License-Identifier: GPL-2.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: stereo-create\n"
+"Report-Msgid-Bugs-To: https://github.com/Sparky-OS/stereo-create/issues\n"
+"PO-Revision-Date: 2026-10-14 00:00+0000\n"
+"Last-Translator: Daniel Campos Ramos <Capitain_Jack@yahoo.com>\n"
+"Language-Team: Sparky Stereo OS\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/cli/main.cpp:31
+msgctxt "@title"
+msgid "Create Stereo"
+msgstr "创建立体"
+
+#: src/cli/main.cpp:32
+msgctxt "@info"
+msgid "Makes stereo pictures and videos in other stereo formats."
+msgstr "将立体照片和视频制作成其他立体格式。"
+
+#: src/cli/main.cpp:33
+msgctxt "@info"
+msgid "Sparky Stereo OS, Daniel Ramos's edition of SparkyLinux (by Paweł \"pavroo\" Pijanowski)"
+msgstr "Sparky Stereo OS，Daniel Ramos 的 SparkyLinux 版本（SparkyLinux 作者：Paweł \"pavroo\" Pijanowski）"
+
+#: src/cli/main.cpp:44
+msgctxt "@info:shell %1 is a list of names"
+msgid "What to make: one of %1."
+msgstr "要制作的内容：%1 之一。"
+
+#: src/cli/main.cpp:46
+msgctxt "@info:shell"
+msgid "JPEG quality, 1 to 100 (default 92)."
+msgstr "JPEG 质量，1 到 100（默认 92）。"
+
+#: src/cli/main.cpp:47
+msgctxt "@info:shell"
+msgid "The time of a frame grab in seconds (default: a third of the video)."
+msgstr "截取帧的时间，单位为秒（默认：视频的三分之一处）。"
+
+#: src/cli/main.cpp:49
+msgctxt "@info:shell"
+msgid "Write anaglyphs as PNG instead of JPEG."
+msgstr "将补色立体图写为 PNG 而不是 JPEG。"
+
+#: src/cli/main.cpp:50
+msgctxt "@info:shell"
+msgid "Only tell whether each file is stereo, and how."
+msgstr "只说明每个文件是否为立体，以及排布方式。"
+
+#: src/cli/main.cpp:51
+msgctxt "@info:shell"
+msgid "Do not show the progress in the notification area."
+msgstr "不在通知区域显示进度。"
+
+#: src/cli/main.cpp:53
+msgctxt "@info:shell"
+msgid "Stereo pictures or videos."
+msgstr "立体照片或视频。"
+
+#: src/cli/main.cpp:82
+msgctxt "@info:shell %1 is a list of names"
+msgid "Choose what to make with --to: %1."
+msgstr "请用 --to 选择要制作的内容：%1。"
+
+#: src/engine/convertvideo.cpp:41 src/engine/convertvideo.cpp:285
+msgctxt "@info %1 is a program"
+msgid "Cannot start %1."
+msgstr "无法启动 %1。"
+
+#: src/engine/convertvideo.cpp:66 src/engine/convertvideo.cpp:338
+msgctxt "@info %1 is an error message"
+msgid "FFmpeg failed: %1"
+msgstr "FFmpeg 失败：%1"
+
+#: src/engine/convertvideo.cpp:79
+msgctxt "@info %1 is a program, %2 its message"
+msgid "%1 failed: %2"
+msgstr "%1 失败：%2"
+
+#: src/engine/convertvideo.cpp:257
+msgctxt "@info"
+msgid "The video has no frame rate to keep."
+msgstr "该视频没有可保留的帧率。"
+
+#: src/engine/convertvideo.cpp:427 src/engine/convertvideo.cpp:519
+msgctxt "@info"
+msgid "This stereo packing cannot be converted yet."
+msgstr "暂时无法转换这种立体排布。"
+
+#: src/engine/convertvideo.cpp:434
+msgctxt "@info"
+msgid "An anaglyph needs a video in standard dynamic range; this one is HDR."
+msgstr "补色立体图需要标准动态范围的视频；这个视频是 HDR。"
+
+#: src/engine/convertvideo.cpp:536
+msgctxt "@info"
+msgid "No frame could be read at that time."
+msgstr "无法读取该时间点的帧。"
+
+#: src/engine/createjob.cpp:188
+msgctxt "@title job, %1 is a kind of file such as MPO"
+msgid "Creating %1"
+msgstr "正在创建 %1"
+
+#: src/engine/createjob.cpp:189
+msgctxt "@label the file a stereo file is made from"
+msgid "Source"
+msgstr "源文件"
+
+#: src/engine/createjob.cpp:197
+msgctxt "@info %1 is a file name, %2 an error message"
+msgid "%1: %2"
+msgstr "%1：%2"
+
+#: src/engine/createjob.cpp:217
+msgctxt "@info"
+msgid "Not a stereo picture or video."
+msgstr "不是立体照片或视频。"
+
+#: src/engine/createjob.cpp:227
+msgctxt "@info"
+msgid "This is made from a picture, not a video."
+msgstr "这需要从照片制作，而不是视频。"
+
+#: src/engine/createjob.cpp:233
+msgctxt "@info"
+msgid "The views of the picture cannot be read."
+msgstr "无法读取照片的各个视图。"
+
+#: src/engine/createjob.cpp:239
+msgctxt "@info"
+msgid "This is made from a video, not a picture."
+msgstr "这需要从视频制作，而不是照片。"
+
+#: src/engine/photo.cpp:45
+msgctxt "@info %1 is a file format, %2 an error message"
+msgid "Cannot write %1: %2"
+msgstr "无法写入 %1：%2"
+
+#: src/engine/photo.cpp:57
+msgctxt "@info %1 is a file name, %2 an error message"
+msgid "Cannot save %1: %2"
+msgstr "无法保存 %1：%2"
+
+#: src/engine/photo.cpp:103
+msgctxt "@info"
+msgid "The JPS writer gave no JPEG data."
+msgstr "JPS 写入器没有生成 JPEG 数据。"
+
+#: src/engine/targets.cpp:57
+msgctxt "@action:inmenu Create stereo"
+msgid "JPS (cross view)"
+msgstr "JPS（交叉视）"
+
+#: src/engine/targets.cpp:59
+msgctxt "@action:inmenu Create stereo"
+msgid "MPO"
+msgstr "MPO"
+
+#: src/engine/targets.cpp:61
+msgctxt "@action:inmenu Create stereo"
+msgid "Red/Cyan Anaglyph"
+msgstr "红/青补色立体图"
+
+#: src/engine/targets.cpp:63
+msgctxt "@action:inmenu Create stereo"
+msgid "Red/Cyan Anaglyph for CRT Screens"
+msgstr "适用于 CRT 屏幕的红/青补色立体图"
+
+#: src/engine/targets.cpp:65
+msgctxt "@action:inmenu Create stereo"
+msgid "Green/Magenta Anaglyph"
+msgstr "绿/品红补色立体图"
+
+#: src/engine/targets.cpp:67
+msgctxt "@action:inmenu Create stereo"
+msgid "Amber/Blue Anaglyph"
+msgstr "琥珀/蓝补色立体图"
+
+#: src/engine/targets.cpp:69
+msgctxt "@action:inmenu Create stereo"
+msgid "Side by Side PNG"
+msgstr "左右并排 PNG"
+
+#: src/engine/targets.cpp:71
+msgctxt "@action:inmenu Create stereo"
+msgid "PNS (cross view)"
+msgstr "PNS（交叉视）"
+
+#: src/engine/targets.cpp:73
+msgctxt "@action:inmenu Create stereo"
+msgid "Proof Pair (MPO and Red/Cyan Anaglyph)"
+msgstr "校样对（MPO 和红/青补色立体图）"
+
+#: src/engine/targets.cpp:75
+msgctxt "@action:inmenu Create stereo"
+msgid "Full Side by Side Video (MKV)"
+msgstr "全宽左右并排视频（MKV）"
+
+#: src/engine/targets.cpp:77
+msgctxt "@action:inmenu Create stereo"
+msgid "Half Side by Side Video for 3D TVs (MKV)"
+msgstr "适用于 3D 电视的半宽左右并排视频（MKV）"
+
+#: src/engine/targets.cpp:79
+msgctxt "@action:inmenu Create stereo"
+msgid "Top and Bottom Video for 3D TVs (MKV)"
+msgstr "适用于 3D 电视的上下排列视频（MKV）"
+
+#: src/engine/targets.cpp:81
+msgctxt "@action:inmenu Create stereo"
+msgid "Side by Side Video (MP4)"
+msgstr "左右并排视频（MP4）"
+
+#: src/engine/targets.cpp:83
+msgctxt "@action:inmenu Create stereo"
+msgid "Red/Cyan Anaglyph Video"
+msgstr "红/青补色立体视频"
+
+#: src/engine/targets.cpp:85
+msgctxt "@action:inmenu Create stereo"
+msgid "Frame as MPO"
+msgstr "将帧保存为 MPO"
+
+#: src/engine/targets.cpp:87
+msgctxt "@action:inmenu Create stereo"
+msgid "Frame as JPS"
+msgstr "将帧保存为 JPS"
+
+#: src/engine/targets.cpp:89
+msgctxt "@action:inmenu Create stereo"
+msgid "Frame as Red/Cyan Anaglyph"
+msgstr "将帧保存为红/青补色立体图"
+
+#: src/plugin/stereocreateitemaction.cpp:67
+msgctxt "@info"
+msgid "The stereo-create program cannot be started."
+msgstr "无法启动 stereo-create 程序。"
+
+#: src/plugin/stereocreateitemaction.cpp:91
+msgctxt "@action:inmenu"
+msgid "Create Stereo"
+msgstr "创建立体"

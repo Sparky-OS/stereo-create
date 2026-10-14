@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Application
+Exec=stereo-create %F
+Icon=view-stereo
+NoDisplay=true
+Name=Create Stereo
+Name[fr]=Créer en stéréo
+Name[ja]=ステレオを作成
+Name[ko]=스테레오 만들기
+Name[pl]=Utwórz stereo
+Name[pt_BR]=Criar estéreo
+Name[zh_CN]=创建立体
+Name[zh_TW]=建立立體
+Comment=Makes stereo pictures and videos in other stereo formats
+Comment[fr]=Crée des photos et des vidéos stéréo dans d’autres formats stéréo
+Comment[ja]=ステレオ写真とビデオを他のステレオ形式で作成します
+Comment[ko]=스테레오 사진과 동영상을 다른 스테레오 형식으로 만듭니다
+Comment[pl]=Tworzy zdjęcia i filmy stereo w innych formatach stereo
+Comment[pt_BR]=Cria fotos e vídeos estéreo em outros formatos estéreo
+Comment[zh_CN]=将立体照片和视频制作成其他立体格式
+Comment[zh_TW]=將立體照片和影片製作成其他立體格式

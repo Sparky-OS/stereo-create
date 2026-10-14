@@ -1,0 +1,32 @@
+Source: stereo-create
+Section: graphics
+Priority: optional
+Maintainer: Daniel Ramos (Capitain Jack) <Capitain_Jack@yahoo.com>
+Build-Depends: debhelper-compat (= 13), cmake, extra-cmake-modules, ninja-build, pkgconf, gettext, qt6-base-dev, libkf6coreaddons-dev, libkf6i18n-dev, libkf6jobwidgets-dev, libkf6kio-dev, libstereo-layer-dev (>= 1.4.0), libavformat-dev, libavcodec-dev, libavutil-dev, kimageformat6-plugins (>= 6.30.0-1+stereo3d2) <!nocheck>, qt6-svg-plugins <!nocheck>
+Standards-Version: 4.7.3
+Rules-Requires-Root: no
+Homepage: https://sparkylinux.org
+
+Package: stereo-create
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ffmpeg (>= 10:9.0.2-dmo1+stereo3d3), mkvtoolnix, kimageformat6-plugins (>= 6.30.0-1+stereo3d2), libstereo-layer1 (>= 1.4.0)
+Recommends: dolphin
+Description: Make stereo pictures and videos in other stereo formats
+ "Create Stereo" in the context menu of stereo pictures and videos (in
+ Dolphin and every program with file item actions), and the stereo-create
+ command behind it, for scripts too. It is offered only on stereo content,
+ as the shared stereo layer decides: a mark, a stereo format or the shape
+ rule, with the user's swap-eyes correction.
+ .
+ Pictures become JPS (cross view, with the JPS descriptor), MPO (CIPA DC-007,
+ Disparity type), PNG side by side and PNS with the sTER chunk, Dubois
+ anaglyphs (red/cyan for today's screens and for CRT screens,
+ green/magenta, amber/blue) and the proof pair (MPO and red/cyan anaglyph).
+ Videos become Matroska full or half side by side or top and bottom with
+ StereoMode and the frame packing SEI, MP4 with the SEI and the st3d box, a
+ red/cyan anaglyph video, or a frame as MPO, JPS or anaglyph; sound,
+ subtitles and the colour description stay. Each run is one job in the
+ notification area, with progress and cancel.
+ .
+ Sparky Stereo OS, Daniel Ramos's edition of SparkyLinux (by Paweł "pavroo"
+ Pijanowski).
