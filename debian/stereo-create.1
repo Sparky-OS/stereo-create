@@ -1,0 +1,69 @@
+.TH STEREO-CREATE 1 "2026-10-14" "stereo-create 1.0.0" "User Commands"
+.SH NAME
+stereo-create \- make stereo pictures and videos in other stereo formats
+.SH SYNOPSIS
+.B stereo-create
+.B \-\-to
+.I target
+.RB [ \-\-quality
+.IR 1-100 ]
+.RB [ \-\-time
+.IR seconds ]
+.RB [ \-\-lossless\-anaglyph ]
+.RB [ \-\-no\-notification ]
+.I files...
+.br
+.B stereo-create \-\-probe
+.I files...
+.SH DESCRIPTION
+.B stereo-create
+makes new files from stereo pictures and videos, next to each source, never replacing a file.
+A file is taken for stereo as the shared stereo layer decides: a mark, a stereo format or the shape rule, with the user's swap-eyes correction kept with the file.
+The files of one run are one job in the notification area, with progress and cancel.
+It is what "Create Stereo" in the context menu of stereo files runs.
+.SH TARGETS
+.TP
+.B proof
+the MPO and the red/cyan anaglyph
+.TP
+.BR mpo ", " jps ", " sbs\-png ", " pns
+MPO (CIPA DC-007), JPS (cross view, with the JPS descriptor), PNG side by side and PNS (with the PNG sTER chunk)
+.TP
+.BR anaglyph\-red\-cyan ", " anaglyph\-red\-cyan\-crt ", " anaglyph\-green\-magenta ", " anaglyph\-amber\-blue
+Dubois anaglyphs, mixed in linear light
+.TP
+.BR video\-full\-sbs ", " video\-half\-sbs ", " video\-top\-bottom
+Matroska with StereoMode and the frame packing SEI
+.TP
+.B video\-mp4
+MP4, full side by side, with the frame packing SEI and the st3d box
+.TP
+.B video\-anaglyph
+Matroska, Dubois red/cyan
+.TP
+.BR frame\-mpo ", " frame\-jps ", " frame\-anaglyph
+a frame of a video as a picture target
+.SH OPTIONS
+.TP
+.BI \-\-to " target"
+what to make
+.TP
+.BI \-\-quality " n"
+JPEG quality, 1 to 100 (default 92)
+.TP
+.BI \-\-time " seconds"
+the time of a frame grab (default: a third of the video)
+.TP
+.B \-\-lossless\-anaglyph
+write anaglyphs as PNG
+.TP
+.B \-\-no\-notification
+do not show the job in the notification area
+.TP
+.B \-\-probe
+only print how each file is taken: stereo or flat, the packing, the eye order and where that came from
+.SH EXIT STATUS
+0 when every file was made, 2 when a file failed, 3 when the job was cancelled.
+.SH SEE ALSO
+.BR ffmpeg (1),
+.BR mkvpropedit (1)

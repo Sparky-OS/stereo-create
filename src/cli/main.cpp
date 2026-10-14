@@ -99,9 +99,6 @@ int main(int argc, char **argv)
         auto *tracker = new KUiServerV2JobTracker(&app);
         tracker->registerJob(job);
     }
-    QObject::connect(job, &KJob::percentChanged, &app, [](KJob *, unsigned long percent) {
-        fprintf(stderr, "%lu%%\n", percent);
-    });
     int status = 0;
     QObject::connect(job, &KJob::result, &app, [&](KJob *) {
         for (const QString &output : job->outputs()) {

@@ -100,6 +100,8 @@ CreateJob::CreateJob(const QStringList &files, Target target, QObject *parent)
     , m_quality(DefaultQuality)
 {
     setCapabilities(KJob::Killable);
+    // Started by the user from a menu: shown in the notification area at once, also when it ends soon
+    setProperty("immediateProgressReporting", true);
     for (const QString &file : files) {
         const qint64 size = qMax<qint64>(1, QFileInfo(file).size());
         m_sizes.append(size);
