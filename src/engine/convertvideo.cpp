@@ -49,6 +49,7 @@ bool runFfmpeg(const QStringList &arguments, double duration, const Progress &pr
         return false;
     }
     QByteArray pending;
+    double reported = 0; // out_time can step back at the end (the other streams): the progress only goes forward
     while (process.state() != QProcess::NotRunning) {
         if (progress.cancelled()) {
             process.kill();
@@ -62,8 +63,11 @@ bool runFfmpeg(const QStringList &arguments, double duration, const Progress &pr
             const QByteArray line = pending.left(end);
             pending.remove(0, end + 1);
             if (line.startsWith("out_time_us=") && duration > 0 && progress.report) {
-                const double seconds = line.mid(12).toDouble() / 1e6;
-                progress.report(qBound(0.0, seconds / duration, 1.0));
+                const double fraction = qBound(0.0, line.mid(12).toDouble() / 1e6 / duration, 1.0);
+                if (fraction > reported) {
+                    reported = fraction;
+                    progress.report(fraction);
+                }
             }
         }
     }

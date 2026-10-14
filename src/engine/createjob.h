@@ -6,6 +6,7 @@
 
 #include <KJob>
 
+#include <QElapsedTimer>
 #include <QFutureWatcher>
 #include <QStringList>
 
@@ -51,6 +52,7 @@ private:
     QStringList m_outputs;
     QStringList m_errors;
     std::atomic<bool> m_cancel = false;
+    QElapsedTimer m_timer;
     QFutureWatcher<void> m_watcher;
 };
 }

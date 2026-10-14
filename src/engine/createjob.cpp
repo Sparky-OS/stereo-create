@@ -8,7 +8,6 @@
 
 #include <KLocalizedString>
 
-#include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
 #include <QUrl>
@@ -141,6 +140,7 @@ QStringList CreateJob::outputs() const
 
 void CreateJob::start()
 {
+    m_timer.start();
     setTotalAmount(KJob::Files, m_files.size());
     setTotalAmount(KJob::Bytes, m_totalBytes);
     connect(&m_watcher, &QFutureWatcher<void>::finished, this, [this] {
@@ -173,17 +173,18 @@ void CreateJob::report(int index, double fraction)
         done += m_sizes.at(i);
     }
     done += qint64(m_sizes.at(index) * fraction);
-    QMetaObject::invokeMethod(this, [this, index, done] {
+    // The bytes of the sources done per second, so that the notification can tell the time left
+    const qint64 elapsed = qMax<qint64>(1, m_timer.elapsed());
+    QMetaObject::invokeMethod(this, [this, index, done, elapsed] {
         setProcessedAmount(KJob::Files, index);
         setProcessedAmount(KJob::Bytes, done);
         setPercent(qMin<qulonglong>(99, done * 100 / qMax<qint64>(1, m_totalBytes)));
+        emitSpeed(done * 1000 / elapsed);
     });
 }
 
 void CreateJob::work()
 {
-    QElapsedTimer timer;
-    timer.start();
     for (int index = 0; index < m_files.size() && !m_cancel; ++index) {
         const QString file = m_files.at(index);
         QMetaObject::invokeMethod(this, [this, file] {
@@ -200,14 +201,8 @@ void CreateJob::work()
             m_errors.append(i18nc("@info %1 is a file name, %2 an error message", "%1: %2", fileName(file), error));
         }
         report(index, 1.0);
-        const qint64 elapsed = qMax<qint64>(1, timer.elapsed());
-        qint64 done = 0;
-        for (int i = 0; i <= index; ++i) {
-            done += m_sizes.at(i);
-        }
-        QMetaObject::invokeMethod(this, [this, index, done, elapsed] {
+        QMetaObject::invokeMethod(this, [this, index] {
             setProcessedAmount(KJob::Files, index + 1);
-            emitSpeed(done * 1000 / elapsed);
         });
     }
 }
