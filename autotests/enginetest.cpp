@@ -10,6 +10,7 @@
 #include <QPainter>
 #include <QTemporaryDir>
 #include <QTest>
+#include <cmath>
 
 using namespace StereoCreate;
 
@@ -207,8 +208,22 @@ void EngineTest::probePictures()
     QString error;
     // a marked pair, an unmarked pair by its shape (2:1), a flat picture
     QVERIFY(writeMpo(redBluePair(QSize(64, 48)), dir.filePath(QStringLiteral("marked.mpo")), 95, &error));
-    QImage shape(128, 64, QImage::Format_RGB888);
+    QImage shape(400, 200, QImage::Format_RGB888);
     shape.fill(Qt::gray);
+    QVERIFY(shape.save(dir.filePath(QStringLiteral("blank.png"))));
+    // Shape alone is not a stereo mark: a blank wide image has no matching
+    // features. Give the positive fixture two textured views of one scene,
+    // following stereo-layer's picture tests, with a small horizontal disparity.
+    for (int y = 0; y < shape.height(); ++y) {
+        for (int x = 0; x < shape.width(); ++x) {
+            const double sx = (x % 200) * 192.0 / 200 + (x >= 200 ? 6 * (1 + y / 200.0) : 0);
+            const double sy = y * 192.0 / 200;
+            const double value = 128 + 50 * std::sin(sx * 0.21 + sy * 0.13) + 35 * std::sin(sx * 0.047 - sy * 0.31)
+                + 25 * std::sin(sx * 0.11 + sy * 0.19) + 20 * std::sin(sx * 0.37 + sy * 0.58);
+            const int c = qBound(0, int(value), 255);
+            shape.setPixelColor(x, y, QColor(c, c * 9 / 10, c * 8 / 10));
+        }
+    }
     QVERIFY(shape.save(dir.filePath(QStringLiteral("shape.png"))));
     QImage flat(64, 48, QImage::Format_RGB888);
     flat.fill(Qt::green);
@@ -219,6 +234,7 @@ void EngineTest::probePictures()
     const Source byShape = probe(dir.filePath(QStringLiteral("shape.png")), true);
     QVERIFY(byShape.stereo);
     QCOMPARE(byShape.origin, Stereo::Picture::Source::Shape);
+    QVERIFY(!probe(dir.filePath(QStringLiteral("blank.png")), true).stereo);
     QVERIFY(!probe(dir.filePath(QStringLiteral("flat.png")), true).stereo);
 }
 
